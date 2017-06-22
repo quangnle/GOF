@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisitorPattern", "VisitorPattern\VisitorPattern.csproj", "{DFC53F10-40E5-40BF-A586-EABFF80D95D0}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatorPattern", "MediatorPattern\MediatorPattern.csproj", "{BFC092B1-AEA8-4DB9-8A70-46964138C5EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrategyPattern", "StrategyPattern\StrategyPattern.csproj", "{C0309080-7155-4A32-8566-3873A39CA1BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandPattern", "CommandPattern\CommandPattern.csproj", "{904778FF-E775-42FE-A647-89FC0CCD504B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{C0309080-7155-4A32-8566-3873A39CA1BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0309080-7155-4A32-8566-3873A39CA1BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0309080-7155-4A32-8566-3873A39CA1BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{904778FF-E775-42FE-A647-89FC0CCD504B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{904778FF-E775-42FE-A647-89FC0CCD504B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{904778FF-E775-42FE-A647-89FC0CCD504B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{904778FF-E775-42FE-A647-89FC0CCD504B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
