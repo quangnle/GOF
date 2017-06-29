@@ -27,7 +27,7 @@ namespace TemplatePattern
         public int GetLength(string s)
         {
             // simulate more complicated logic
-            Console.WriteLine("Processing '{0}'...", s);            
+            Console.WriteLine("Processing \"{0}\"...", s);            
             return s.Length;
         }
 
