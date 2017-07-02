@@ -11,9 +11,11 @@ namespace TemplatePattern
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("---Input: Keyboard, Output: Screen---");
             var handler1 = new StdStringHandler();
             handler1.RunProcess();
 
+            Console.WriteLine("---Input/Output: File---");
             var handler2 = new FileContentHandler("poem.txt");
             handler2.RunProcess();
         }
@@ -65,7 +67,7 @@ namespace TemplatePattern
         public override void Output(int length)
         {
             File.WriteAllText(string.Format("output_{0}", _path), string.Format("{0}\n", length));
-            Console.WriteLine("Saved length to output_", _path);
+            Console.WriteLine("Saved length to output_{0}", _path);
         }
 
         public override string PrepareString()
