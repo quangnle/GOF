@@ -15,38 +15,22 @@ namespace CommandPattern
             var controller = new RobotController(bot);
 
             // create and set commands to receiver
-            controller.AddCommand(new MoveCommand());
-            controller.AddCommand(new MoveCommand());
-            controller.AddCommand(new TurnRightCommand());
-            controller.AddCommand(new MoveCommand());
-            controller.AddCommand(new TurnLeftCommand());
-            controller.AddCommand(new MoveCommand());
-            controller.AddCommand(new TurnLeftCommand());
-            controller.AddCommand(new MoveCommand());
+            controller.AddCommand(new GoStraightCommand());
+            controller.AddCommand(new GoStraightCommand());
+            controller.AddCommand(new GoRightCommand());
+            controller.AddCommand(new GoBackCommand());
+            controller.AddCommand(new GoLeftCommand());
+            controller.AddCommand(new GoStraightCommand());
+            controller.AddCommand(new GoLeftCommand());
 
             controller.Execute();
         }
     }
 
-    enum Direction
-    {
-        Up = 0,
-        Right = 1,
-        Down = 2,
-        Left = 3,
-        NumDirections
-    }
-
     class Robot
     {
-        public Robot()
-        {
-            Dir = Direction.Up;
-        }
-
         public int X { get; set; }
         public int Y { get; set; }
-        public Direction Dir { get; set; }
     }
 
     // command definitions
@@ -55,45 +39,43 @@ namespace CommandPattern
         void Execute(Robot bot);
     }
 
-    class TurnRightCommand : ICommand
+    class GoStraightCommand : ICommand
     {
         public void Execute(Robot bot)
         {
-            Console.WriteLine("Executing TurnRight command");
-            bot.Dir = (Direction)(((int)bot.Dir + 1) % (int)Direction.NumDirections);
+            Console.WriteLine("Executing GoStraightCommand");
+
+            bot.Y++;
         }
     }
 
-    class TurnLeftCommand : ICommand
+    class GoBackCommand : ICommand
     {
         public void Execute(Robot bot)
         {
-            Console.WriteLine("Executing TurnLeft command");
-            bot.Dir = (Direction)((((int)bot.Dir + (int)Direction.NumDirections) - 1) % (int)Direction.NumDirections);
+            Console.WriteLine("Executing GoBackCommand");
+
+            bot.Y--;
         }
     }
 
-    class MoveCommand : ICommand
+    class GoLeftCommand : ICommand
     {
         public void Execute(Robot bot)
         {
-            Console.WriteLine("Executing Move command");
+            Console.WriteLine("Executing GoLeftCommand");
 
-            switch (bot.Dir)
-            {
-                case Direction.Up:
-                    bot.Y++;
-                    break;
-                case Direction.Down:
-                    bot.Y--;
-                    break;
-                case Direction.Left:
-                    bot.X--;
-                    break;
-                case Direction.Right:
-                    bot.X++;
-                    break;
-            }
+            bot.X--;
+        }
+    }
+
+    class GoRightCommand : ICommand
+    {
+        public void Execute(Robot bot)
+        {
+            Console.WriteLine("Executing GoRightCommand");
+
+            bot.X++;
         }
     }
 
@@ -116,14 +98,14 @@ namespace CommandPattern
 
         public void Execute()
         {
-            Console.WriteLine("[Robot] Position: ({0}, {1}), Direction: {2}", _bot.X, _bot.Y, _bot.Dir.ToString());
+            Console.WriteLine("[Robot] ({0}, {1})", _bot.X, _bot.Y);
 
             while (_commands.Count > 0)
             {
                 var command = _commands.Dequeue();
                 command.Execute(_bot);
 
-                Console.WriteLine("Position: ({0}, {1}), Direction: {2}", _bot.X, _bot.Y, _bot.Dir.ToString());
+                Console.WriteLine("Position: ({0}, {1})", _bot.X, _bot.Y);
             }
         }
     }

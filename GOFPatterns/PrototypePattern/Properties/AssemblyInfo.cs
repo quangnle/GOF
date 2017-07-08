@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("IteratorPattern")]
+[assembly: AssemblyTitle("PrototypePattern")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("IteratorPattern")]
+[assembly: AssemblyProduct("PrototypePattern")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b350a7bb-1fa9-43a3-9cd7-304e26627173")]
+[assembly: Guid("71a94b8d-4df0-4c92-a308-4b824d38679c")]
 
 // Version information for an assembly consists of the following four values:
 //
